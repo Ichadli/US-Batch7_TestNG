@@ -12,7 +12,7 @@ import java.time.Duration;
 public class DriverClass {
     public static WebDriver driver;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void startingSettings() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -34,7 +34,7 @@ public class DriverClass {
         login.click();
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void finishSetting() {
         try {
             Thread.sleep(3000);
